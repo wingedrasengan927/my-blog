@@ -1,10 +1,22 @@
-import { Routes, Route } from 'react-router-dom';
+import { useState } from 'react';
 import './App.css';
 import Card from './components/Card/Card';
-import ArticlePage from './components/ArticlePage';
+import Editor from './components/Editor/Editor';
 import articles from './articles_metadata.json';
 
-function Home() {
+function App() {
+  const [articleContent, setArticleContent] = useState(null);
+
+  const handleCardClick = async (contentUrl) => {
+    const response = await fetch(contentUrl);
+    const data = await response.json();
+    setArticleContent(data);
+  };
+
+  if (articleContent) {
+    return <Editor articleContent={articleContent} onBack={() => setArticleContent(null)} />;
+  }
+
   return (
     <div className="app">
       <div className="introduction">
@@ -29,19 +41,14 @@ function Home() {
       </div>
       <div className="articles">
         {articles.map((article, index) => (
-          <Card key={index} {...article} />
+          <Card
+            key={index}
+            {...article}
+            onClick={() => handleCardClick(article.content_url)}
+          />
         ))}
       </div>
     </div>
-  );
-}
-
-function App() {
-  return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/article/:slug" element={<ArticlePage />} />
-    </Routes>
   );
 }
 
