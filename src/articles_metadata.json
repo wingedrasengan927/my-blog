@@ -2,7 +2,7 @@
   {
     "title": "Introducing an Open Source Medium-like Editor",
     "subtitle": "A medium clone built using Lexical, enhanced with additional features.",
-    "image": "src/assets/images/medium_editor_article.png",
+    "image": "/article_thumbnails/medium_editor_article.png",
     "date_published": "March 22, 2026",
     "content_url": "https://gist.githubusercontent.com/wingedrasengan927/e53e5c0700863963b92a1ae9209fed5a/raw/",
     "slug": "introducing-open-source-medium-like-editor"
