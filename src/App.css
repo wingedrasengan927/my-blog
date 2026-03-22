@@ -1,0 +1,54 @@
+.app {
+  padding: 24px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.blog-header {
+  font-family: "Instrument Serif", serif;
+  font-weight: 400;
+  font-size: 64px;
+  margin: 24px 0 12px;
+  color: #242424;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.reach-out {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.reach-out-text {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  color: #6b6b6b;
+}
+
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.social-links a {
+  color: #6b6b6b;
+  transition: color 0.2s;
+  display: flex;
+}
+
+.social-links a:not(:last-child)::after {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 16px;
+  background-color: #d0d0d0;
+  margin-left: 8px;
+  align-self: center;
+}
+
+.social-links a:hover {
+  color: #242424;
+}
